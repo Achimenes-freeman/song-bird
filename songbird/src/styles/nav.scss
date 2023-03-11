@@ -1,0 +1,67 @@
+@import 'vars.scss';
+
+.nav{
+
+    &__list{
+        border-radius: 10px;
+        // background-color: $grey-opasity;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        transform: translate(0);
+
+        @media (max-width: 797px){
+            position: absolute;
+            bottom: 100%;
+            right: 0;
+            width: 100%;
+            background: $grey-orange;
+            z-index: 100;
+            border-radius: 0;
+            padding: 20px 0;
+            transition: all .15s linear;
+            justify-content: space-around;
+        }
+
+            &-item{
+                color: #fff;
+                font-size: 2rem;
+                font-weight: 400;
+                letter-spacing: 2px;
+                padding: 10px 20px;
+                cursor: pointer;
+                border-radius: 10px;
+                transition: all .15s linear;
+                margin-right: 20px;
+                text-align: center;
+                min-width: 200px;
+
+                &:hover{
+                    background-color: $grey-orange;
+                    color: $orange;
+                }
+
+                &._active{
+                    background-color: $orange;
+                    color: $grey-orange;
+                }
+
+                &:last-child{
+                    margin-right: 0;
+                }
+
+                @media (max-width: 1279px){
+                    min-width: 0;
+                    font-size: calc(14px + (32 - 14) * ((100vw - 320px)/(1279 - 320)));
+                }
+                @media (max-width: 797px){
+                    font-size: calc(18px + (32 - 18) * ((100vw - 320px)/(797 - 320)));
+                    margin-right: 0;
+                    padding: 5px 10px;
+
+                }
+            }
+        }
+}

@@ -1,0 +1,193 @@
+@import './vars.scss';
+
+.player{
+
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    width: 100%;
+
+    &__info{
+        flex-grow: 1;
+
+        &-controls{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__pause{
+        position: relative;
+        height: 50px;
+        width: 50px;
+        background: $orange-white-gradient;
+        flex-shrink: 0;
+        border-radius: 50%;
+        margin-right: 20px;
+        cursor: pointer;
+
+        @media (max-width: 640px){
+            height: 30px;
+            width: 30px;
+            margin-right: 5px;
+        }
+
+        &::after{
+            content: "";
+            display: block;
+            border: 10px solid transparent;
+            border-left: 16px solid $grey-opasity;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-25%, -50%);
+
+            @media (max-width: 640px){
+                border: 7px solid transparent;
+                border-left: 10px solid $grey-opasity;
+            }
+        }
+
+        &._pause{
+            &::after{
+                content: "";
+                display: block;
+                height: 40%;
+                width: 4px;
+                border: none;
+                background-color: $grey-opasity;
+                border-radius: 2px;
+                position: absolute;
+                top: 50%;
+                left: 60%;
+                transform: translate(-50%, -50%);
+                @media (max-width: 640px){
+                    width: 2px;
+                }
+            }
+
+            &::before{
+                content: "";
+                display: block;
+                height: 40%;
+                width: 4px;
+                background-color: $grey-opasity;
+                border-radius: 2px;
+                position: absolute;
+                top: 50%;
+                left: 40%;
+                transform: translate(-50%, -50%);
+                @media (max-width: 640px){
+                    width: 2px;
+                }
+            }
+        }
+
+    }
+
+    &__volume{
+
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-grow: 1;
+
+        &-icon{
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            cursor: pointer;
+
+            @media (max-width: 640px){
+                width: 15px;
+                height: 15px;
+            }
+        }
+
+        &-bar{
+            width: 80px;
+        }
+
+        @media (max-width: 386px){
+            flex-basis: 100%;
+            order: 3;
+        }
+    }
+
+    &__time{
+
+        &-bar{
+            flex-grow: 1;
+            width: 100%;
+            margin-bottom: 10px;
+
+            @media (max-width: 640px){
+                margin-bottom: 5px;
+            }
+        }
+
+        &-passed{
+            margin-right: 20px;
+        }
+    }
+}
+
+
+input[type=range]  {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    overflow: hidden;
+    height: 4px;
+    cursor: pointer;
+
+    @media (max-width: 640px){
+        height: 4px;
+    }
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    height: 4px;
+    background-color: $gray;
+
+    @media (max-width: 640px){
+        height: 4px;
+    }
+}
+
+input[type=range]::-webkit-slider-thumb {
+    background: $orange;
+    cursor: pointer;
+    width:15px;
+    height: 15px;
+    appearance: none;
+    -webkit-appearance: none;
+    box-shadow: -100vw 0 0 100vw $grey-orange;
+}
+
+input[type=range]::-moz-range-track {
+    height: 4px;
+    background-color: $gray;
+
+    @media (max-width: 640px){
+        height: 4px;
+    }
+}
+
+
+input[type=range]::-moz-range-thumb {
+    background: $orange;
+    cursor: pointer;
+    height: 4px;
+    border-radius:0px;
+    box-shadow: -100vw 0 0 100vw $grey-orange;
+    padding: 0px;
+    margin: 0px;
+
+    @media (max-width: 640px){
+        height: 4px;
+    }
+}

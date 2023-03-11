@@ -1,0 +1,33 @@
+@import 'vars.scss';
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    user-select: none;
+}
+
+ul{
+    list-style: none;
+}
+
+html,
+body{
+    font-size: 16px;
+}
+
+.wraper{
+    background: $black-gradient;
+    margin: 0;
+    width: 100%;
+    font-family: $nito;
+    color: $standart;
+    letter-spacing: 2px;
+    position: relative;
+    // overflow: hidden;
+}
+
+._hide{
+    display: none;
+}

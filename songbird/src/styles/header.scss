@@ -1,0 +1,112 @@
+@import './vars.scss';
+
+.header{
+    margin-bottom: 40px;
+    font-family: $caveat;
+
+    @media (max-width: 640px) {
+        margin-bottom: 20px;
+    }
+
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo{
+        user-select: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 30px;
+        display: flex;
+        color: #fff;
+
+        &-text{
+            font-family: $pacifico;
+            font-size: $big-text;
+            margin-right: 15px;
+
+            @media (max-width: 480px){
+                font-size: calc(30px + (40 - 30)*((100vw - 320px)/(480 - 320)));
+            }
+        }
+
+        &-image{
+            width: 55px;
+            height: 55px;
+            display: block;
+
+            @media (max-width: 480px){
+                width: calc(30px + (55 - 30)*((100vw - 320px)/(480 - 320)));
+                height: calc(30px + (55 - 30)*((100vw - 320px)/(480 - 320)));
+            }
+        }
+
+
+    }
+
+    &__burger{
+        display: none;
+
+        &-item{
+            height: 3px;
+            width: 100%;
+            background-color: $orange;
+        }
+
+        &-mask{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $grey-opasity;
+            display: none;
+            z-index: 99;
+        }
+
+        &-close-btn{
+            position: absolute;
+            bottom: 100%;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            z-index: 101;
+            transition: all .15s linear;
+
+            &::after{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%) rotate(-45deg);
+                display: block;
+                content: "";
+                height: 2px;
+                width: 100%;
+                background-color: $orange;
+            }
+
+            &::before{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%) rotate(45deg);
+                display: block;
+                content: "";
+                height: 2px;
+                width: 100%;
+                background-color: $orange;
+            }
+        }
+        @media (max-width: 797px){
+            width: 30px;
+            height: 30px;
+            display: block;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    }
+}

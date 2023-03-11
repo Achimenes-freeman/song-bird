@@ -1,0 +1,72 @@
+@import './vars.scss';
+
+.gallery{
+
+    font-family: $caveat;
+
+    animation: fade .5s linear both;
+
+    &__title{
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 4rem;
+
+        @media (max-width: 640px){
+            font-size: $big-text;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__subtitle{
+        flex-basis: 100%;
+        text-align: center;
+        font-size: 2.8rem;
+        margin-bottom: 40px;
+        margin-top: 20px;
+        border-radius: 10px;
+        background-color: $orange;
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $grey-orange;
+
+        @media (max-width: 640px){
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            min-height: 40px;
+            margin-top: 0px;
+        }
+    }
+
+    &__inner{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: stretch;
+
+        &-item{
+            flex-basis: 49%;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            background-color: $disable;
+
+            & .quiz__bird{
+                background-color: transparent;
+            }
+
+            @media (max-width: 1279px){
+                flex-basis: 100%;
+            }
+        }
+    }
+}
+
+@keyframes fade {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

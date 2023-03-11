@@ -1,0 +1,58 @@
+@import './vars.scss';
+
+.results{
+    border-radius: 10px;
+    background-color: $disable;
+    padding: 30px;
+    font-family: $caveat;
+    text-align: left;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+    animation: fade .5s linear both;
+
+    @media (max-width: 1279px){
+        width: 90%;
+    }
+
+    @media (max-width: 797px){
+        width: 100%;
+    }
+
+    @media (max-width: 640px){
+        padding: 20px;
+    }
+
+    &__title{
+        font-size: 4rem;
+        margin-bottom: 40px;
+
+        @media (max-width: 640px){
+            font-size: $big-text;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__text{
+        font-size: 3rem;
+        margin-bottom: 60px;
+
+        @media (max-width: 640px){
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@keyframes fade {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

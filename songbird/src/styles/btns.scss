@@ -1,0 +1,90 @@
+@import './vars.scss';
+
+.btn{
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    border-radius: 10px;
+    border: none;
+    padding: .3em .5em;
+    cursor: pointer;
+    background-color: $grey-orange;
+    color: $orange;
+    font-size: $big-text;
+    font-family: $caveat;
+    text-align:center;
+    transition: background-color .2s linear, border-color .2s linear, color .2s linear;
+
+    &:hover{
+        background-color: $orange;
+        color: $grey-orange;
+    }
+
+
+    &--home{
+        min-width: 70%;
+
+        @media (max-width: 797px){
+            flex-basis: 100%;
+            min-width: 0;
+            max-width: 300px;
+        }
+
+    }
+
+    &--quiz{
+        flex-basis: 49%;
+        margin-bottom: 20px;
+        color: $orange;
+
+        @media (max-width: 1279px){
+            order: 2;
+        }
+
+        @media (max-width: 797px){
+            flex-basis: 100%;
+            order: 1;
+        }
+
+        @media (max-width: 640px){
+            margin-bottom: 10px;
+        }
+    }
+
+    &--results{
+        flex-grow: 0;
+        min-width: 250px;
+        background-color: $orange;
+        color: $grey-orange;
+
+        &:hover{
+            background-color: $grey-orange;
+            color: $orange;
+        }
+
+        @media (max-width: 640px){
+            font-size: 1.8rem;
+
+        }
+    }
+
+    &--language{
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        padding: .5em;
+        font-weight: bold;
+        min-width: 50px;
+
+        @media (max-width: 480px){
+            font-size: calc(14px + (19 - 14)*((100vw - 320px)/(480 - 320)));
+            min-width: 40px;
+            margin-right: 10px;
+        }
+    }
+
+    &._disable{
+        background-color: $grey-opasity;
+        color: $gray;
+        cursor: default;
+    }
+}
